@@ -2,8 +2,29 @@
 <head>
   <title> Animate Flex </title>
   <script src="lib/angular/1.5.7/angular.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body ng-controller="FlexCtrl">
+   <div id="wrapper">
+     <header>
+      <div id="title">
+      </div>
+        <form name="main-form" id="form">
+          <label>Number of Boxes:</label>
+          <input class="input-size" type="number" name="" min="0" max="100">
+          <input type="submit" value="Submit" name="" id="submit">
+          <label>Direction:</label>
+          <select class="input-size" ng-options="d.value as d.label for d in directions" ng-model="selected.directions"></select>
+          <label>Direction:</label>
+          <select class="input-size"></select>
+          <label>Direction:</label>
+          <select class="input-size"></select>
+          <label>Direction:</label>
+          <select class="input-size"></select>
+        </form>
+      </header>
+      Direction: {{selected.directions}}
+   </div>
 
    <!-- Angular app, controller, service, ... -->
    <script src="js/angular.js"></script>

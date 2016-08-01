@@ -9,7 +9,24 @@ var animateFlexApp = angular.module('animateFlexApp',[]);
 //animateFlexApp.directive('myDirective', function() {});
 
 animateFlexApp.controller('FlexCtrl', ['$scope', 'FlexService', function($scope, FlexService) {
-
+	// All selected values
+	var selected = {
+		directions: "",
+		apples: "",
+		limes: "",
+		lemons: ""
+	}
+	// Options for all select tags
+	$scope.directions = [
+		{
+			value:'Row',
+			label:'Row'
+		},
+		{
+			value:'Column',
+			label:'Column'
+		}
+	];
 }]);
 
 animateFlexApp.service('FlexService', function() {
