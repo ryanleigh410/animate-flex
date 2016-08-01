@@ -9,6 +9,8 @@ var animateFlexApp = angular.module('animateFlexApp',[]);
 //animateFlexApp.directive('myDirective', function() {});
 
 animateFlexApp.controller('FlexCtrl', ['$scope', 'FlexService', function($scope, FlexService) {
+	// Scope variables
+	$scope.menuVis = true;
 	// All selected values
 	var selected = {
 		directions: "",
@@ -27,6 +29,7 @@ animateFlexApp.controller('FlexCtrl', ['$scope', 'FlexService', function($scope,
 			label:'Column'
 		}
 	];
+
 }]);
 
 animateFlexApp.service('FlexService', function() {
