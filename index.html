@@ -1,7 +1,9 @@
 <html ng-app="animateFlexApp">
 <head>
   <title> Animate Flex </title>
+  <!-- Angular anf libraries -->
   <script src="lib/angular/1.5.7/angular.min.js"></script>
+  <script src="lib/ng-animate/1.4.8/angular-animate.min.js"></script>
   <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
   <link rel="stylesheet" type="text/css" href="lib/font-awesome/4.6.3/font-awesome.min.css">
@@ -18,7 +20,7 @@
           <div class="menu-button" ng-click="menuVis = !menuVis">
             <i class="fa fa-bars fa-2x"></i>
           </div>
-          <form name="main-form" id="form" ng-class="changeMenu()">
+          <form name="main-form" id="form" ng-hide="menuVis">
             <table class="menu">
               <tr>
                 <td>
