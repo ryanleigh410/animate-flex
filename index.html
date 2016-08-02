@@ -2,53 +2,54 @@
 <head>
   <title> Animate Flex </title>
   <script src="lib/angular/1.5.7/angular.min.js"></script>
-  <!-- Stylesheet -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="lib/font-awesome/4.6.3/font-awesome.min.css">
   <!-- Fonts -->
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 <body ng-controller="FlexCtrl">
    <div id="wrapper">
-     <header>
-      <div id="title">
-        <span>Animate-Flex, Ryan Leigh, Jamie Gross</span>
+      <div class="title">
+        <span><b>Animate-Flex</b>, Ryan Leigh, Jamie Gross</span>
       </div>
-        <form name="main-form" id="form">
+      <div class="content-container">
+        <div class="menu-container">
           <div class="menu-button" ng-click="menuVis = !menuVis">
-            menu
+            <i class="fa fa-bars fa-2x"></i>
           </div>
-          <ul id="menu" ng-if="menuVis">
-            <li>
-              <label>Number of Boxes:</label>
-              <input class="input-size" type="number" name="" min="0" max="100">
-            </li>
-            <li>
-              <label>Direction:</label>
-              <select class="input-size" ng-options="d.value as d.label for d in directions" ng-model="selected.directions"></select>
-            </li>
-            <li>
-              <label>Direction:</label>
-              <select class="input-size" ng-options="d.value as d.label for d in directions" ng-model="selected.directions"></select>
-            </li>
-            <li>
-              <label>Direction:</label>
-              <select class="input-size"></select>
-            </li>
-            <li>
-              <label>Direction:</label>
-              <select class="input-size"></select>
-            </li>
-            <li>
-              <input type="submit" value="Submit" name="" id="submit">
-            </li>
-          </ul>
-        </form>
-      </header>
-      <div id="content">
-        Direction: {{selected.directions}}
+          <form name="main-form" id="form" ng-class="changeMenu()">
+            <table class="menu">
+              <tr>
+                <td>
+                  <label>Boxes:</label>
+                </td>
+                <td>
+                  <input class="input-size" type="number" name="" min="0" max="100">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Direction:</label>
+                </td>
+                <td>
+                  <select class="input-size" ng-options="d.value as d.label for d in directions" ng-model="selected.directions"></select>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <input type="submit" value="Submit" name="" id="submit">
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        <div class="content">
+          hello
+        </div>
       </div>
    </div>
-
    <!-- Angular app, controller, service, ... -->
    <script src="js/angular.js"></script>
 </body>

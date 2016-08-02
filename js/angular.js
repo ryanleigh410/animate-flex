@@ -12,7 +12,7 @@ animateFlexApp.controller('FlexCtrl', ['$scope', 'FlexService', function($scope,
 	// Scope variables
 	$scope.menuVis = true;
 	// All selected values
-	var selected = {
+	$scope.selected = {
 		directions: "",
 		apples: "",
 		limes: "",
@@ -29,6 +29,16 @@ animateFlexApp.controller('FlexCtrl', ['$scope', 'FlexService', function($scope,
 			label:'Column'
 		}
 	];
+
+	$scope.changeMenu = function() {
+		if($scope.menuVis) {
+			console.log("HIDE: " + $scope.menuVis);
+			return "hidden";
+		} else {
+			console.log("NOT: " + $scope.menuVis);
+			return "not-hidden-block";
+		}
+	}
 
 }]);
 

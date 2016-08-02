@@ -13,6 +13,14 @@
 	--accent-color: #F3EFE0;
 }
 
+/* OVERRIDES */
+.hidden {
+  display: none;
+}
+.not-hidden-block {
+  display: block !important;
+}
+
 /* GENERAL STYLES */
 * {
 	font-family: 'Raleway', sans-serif;
@@ -22,38 +30,56 @@ html, body {
 	padding: 0;
 }
 #wrapper {
+  height: 100%;
 	width: 100%;
 	min-width: 360px;
-	position: absolute;
+  position: absolute;
 	margin: 0;
+  display: flex;
+  flex-direction: column;
 }
-
-/* HEADER */
-header {
-}
-#title {
+.title {
+  height: 30px;
 	font-size: 20px;
 	text-align: center;
 	padding: 20px 0px;
 	background-color: var(--primary-color);
 	color: #FFFFFF;
 }
-#form {
-	margin: 0px;
-	padding: 15px;
-	border-top: 2px solid var(--primary-color);
-	border-bottom: 2px solid var(--primary-color);
+.content-container {
+  height: calc(100% - 70px);
+  display: flex;
 }
-#menu {
-	flex-direction: column;
-	padding: 0;
-	list-style-type: none;
+.menu-container {
+  width: 30%;
+  max-width: 360px;
+  display: inline-block;
 }
 .menu-button {
-	display: none;
+  background-color: var(--secondary-color);
+  padding: 10px;
 }
-#menu li {
-	display: inline;
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 10px;
+}
+#form {
+  margin: 0;
+  padding: 10px;
+}
+.menu {
+  width: 100%;
+  padding: 0;
+}
+.menu > tbody {
+  width: 100%;
+}
+.menu tr {
+  width: 100%;
+}
+.menu tr > td:nth-child(2) {
+  text-align: right;
 }
 #submit {
 		background-color: var(--secondary-color); /* Green */
@@ -62,50 +88,35 @@ header {
     color: white;
     width: 80px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    position: absolute;
-    right: 15px;
     height: 40px;
     font-size: 16px;
 }
 .input-size {
-	font-size: 16px;
 	height: 40px;
 	width: 80px;
+  margin: 5px 0px;
+  font-size: 16px;
 	line-height: 40px;		/* For height of <select> */
 	background: #ffffff;	/* For height of <select> */
 	border: 1px solid var(--secondary-color);
-	margin: 0px 5px;
-}
-
-/* CONTENT */
-#content {
-	margin: 15px;
 }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 1050px) {
-	#menu {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	#menu > li {
-		display: block;
-		width: 250px;
-		margin: 5px;
-	}
-	#menu input, #menu select {
-		float: right;
-	}
-	.menu-button {
-		display: block;
-		border-bottom: 2px solid var(--primary-color)
-	}
-	#submit {
-		position: relative;
-		left: 0px;
-		margin-right: 5px;
-	}
+/* Less than 610px */
+@media only screen and (max-width: 610px) {
+  .content-container {
+    display: block;
+  }
+  .menu-container {
+    width: 100%;
+  }
+  #form {
+    border-bottom: 2px solid var(--primary-color);
+  }
+}
+/* Greater than 611px */
+@media only screen and (min-width: 611px) {
+  .content {
+    border-left: 2px solid var(--primary-color);
+  }
 }
